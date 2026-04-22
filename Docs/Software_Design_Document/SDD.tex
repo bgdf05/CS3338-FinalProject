@@ -1,0 +1,66 @@
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+
+\title{Software Design Document \\ AI-Powered University Information System}
+\author{CS3338 Final Project Group}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+This document explains the design of our AI-Powered University Information System. 
+The goal of this project is to create one platform where students can easily check their academic progress, explore campus opportunities, and communicate with advisors. 
+Many students currently use different websites for these tasks, so our system is meant to make the process simpler.
+
+\section{Purpose}
+The purpose of this project is to improve how students access important university information. 
+Instead of searching through multiple systems, students can use one application to manage their school needs. 
+We also want to help students plan ahead by showing progress toward graduation and useful recommendations.
+
+\section{System Architecture}
+The system follows a client-server architecture.
+
+Frontend: React Native and Web Interface
+
+Backend: Node.js with Express
+
+Database: MongoDB
+
+Authentication: JWT-based login system
+
+The frontend handles the user interface, while the backend manages requests, user data, and communication with the database.
+
+\section{User Interface}
+The system includes several main pages:
+
+Login Page for secure sign in
+
+Dashboard for announcements and quick access tools
+
+Progress Tracker for completed units and degree progress
+
+Resources Page for internships, scholarships, and events
+
+Advisor Portal for advisor and student communication
+
+Profile Page for account settings and personal information
+
+The interface is designed to be simple and easy to navigate for students.
+
+\section{Snapshot 1 Goals}
+For the first project snapshot, our goals are to organize the repository, define the overall system structure, 
+identify the most important features, and complete the initial documentation. 
+This phase helps prepare the team for later development stages.
+
+\section{Glossary}
+SDD = Software Design Document
+
+UI = User Interface
+
+JWT = JSON Web Token
+
+API = Application Programming Interface
+
+\end{document}
