@@ -10,9 +10,9 @@
 \maketitle
 
 \section{Revision History}
-Version 0.1 - Snapshot 1 Initial Draft
+Version 0.1 - Snapshot 1 Initial Draft \\
 
-Version 0.2 - Snapshot 2 Added new feature modules, updated system architecture, and expanded user interface design.
+Version 0.2 - Snapshot 2 Added new feature modules, updated system architecture, and expanded user interface design. \\
 
 Version 0.3 - Snapshot 3 Added analytics dashboard, document upload support, admin management tools, and updated architecture for expanded system services.
 
@@ -30,29 +30,24 @@ In this snapshot, the system is expanded further to support stronger communicati
 \section{System Architecture}
 The system follows a client-server architecture.
 
-Frontend: React Native and Web Interface
+\textbf{Frontend:} React Native and Web Interface \\  
+\textbf{Backend:} Node.js with Express \\  
+\textbf{Database:} MongoDB \\  
+\textbf{Authentication:} JWT-based login system
 
-Backend: Node.js with Express
+\subsection*{Existing Feature Modules}
+\begin{itemize}
+\item Recommendation Engine for personalized internships, scholarships, and opportunities
+\item Notification System for reminders, deadlines, and campus announcements
+\item Advisor Messaging Module for communication between students and advisors
+\end{itemize}
 
-Database: MongoDB
-
-Authentication: JWT-based login system
-
-Existing Feature Modules:
-
-Recommendation Engine for personalized internships, scholarships, and opportunities
-
-Notification System for reminders, deadlines, and campus announcements
-
-Advisor Messaging Module for communication between students and advisors
-
-New Snapshot 3 Feature Modules:
-
-Analytics Dashboard for tracking student progress, engagement, and opportunity activity
-
-Document Upload Module for resumes, academic files, and supporting materials
-
-Admin Management Module for updating opportunities, announcements, and student resources
+\subsection*{New Snapshot 3 Feature Modules}
+\begin{itemize}
+\item Analytics Dashboard for tracking student progress, engagement, and opportunity activity
+\item Document Upload Module for resumes, academic files, and supporting materials
+\item Admin Management Module for updating opportunities, announcements, and student resources
+\end{itemize}
 
 The frontend handles the user interface, while the backend manages requests, user data, recommendations, notifications, messaging, uploaded files, and communication with the database.
 The database stores student profiles, academic progress information, uploaded documents, recommendations, messages, and system announcements.
@@ -60,27 +55,19 @@ The database stores student profiles, academic progress information, uploaded do
 \section{User Interface}
 The system includes several main pages:
 
-Login Page for secure sign in
-
-Dashboard for announcements and quick access tools
-
-Progress Tracker for completed units and degree progress
-
-Resources Page for internships, scholarships, and events
-
-Advisor Portal for advisor and student communication
-
-Profile Page for account settings and personal information
-
-Notifications Page for reminders, deadlines, and updates
-
-Recommendation Page for personalized student opportunities
-
-Analytics Dashboard Page for viewing student activity and progress summaries
-
-Document Upload Page for resumes and academic file submissions
-
-Admin Management Page for maintaining announcements, resources, and opportunity postings
+\begin{itemize}
+\item Login Page for secure sign in
+\item Dashboard for announcements and quick access tools
+\item Progress Tracker for completed units and degree progress
+\item Resources Page for internships, scholarships, and events
+\item Advisor Portal for advisor and student communication
+\item Profile Page for account settings and personal information
+\item Notifications Page for reminders, deadlines, and updates
+\item Recommendation Page for personalized student opportunities
+\item Analytics Dashboard Page for viewing student activity and progress summaries
+\item Document Upload Page for resumes and academic file submissions
+\item Admin Management Page for maintaining announcements, resources, and opportunity postings
+\end{itemize}
 
 The interface is designed to be simple and easy to navigate for students, advisors, and administrators.
 The expanded interface in Snapshot 3 supports more advanced academic planning and management features while keeping the layout organized and user friendly.
@@ -92,14 +79,12 @@ These additions improve how students track their activity, how advisors review s
 This phase also updates the design documentation to reflect the growing complexity of the application and prepares the project for final refinement in the next snapshot.
 
 \section{Glossary}
-SDD = Software Design Document
-
-UI = User Interface
-
-JWT = JSON Web Token
-
-API = Application Programming Interface
-
-DB = Database
+\begin{itemize}
+\item SDD = Software Design Document
+\item UI = User Interface
+\item JWT = JSON Web Token
+\item API = Application Programming Interface
+\item DB = Database
+\end{itemize}
 
 \end{document}
