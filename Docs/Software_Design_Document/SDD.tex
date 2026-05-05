@@ -14,6 +14,8 @@ Version 0.1 - Snapshot 1 Initial Draft
 
 Version 0.2 - Snapshot 2 Added new feature modules, updated system architecture, and expanded user interface design.
 
+Version 0.3 - Snapshot 3 Added analytics dashboard, document upload support, admin management tools, and updated architecture for expanded system services.
+
 \section{Introduction}
 This document explains the design of our AI-Powered University Information System.
 The goal of this project is to create one platform where students can easily check their academic progress, explore campus opportunities, and communicate with advisors.
@@ -23,6 +25,7 @@ Many students currently use different websites for these tasks, so our system is
 The purpose of this project is to improve how students access important university information.
 Instead of searching through multiple systems, students can use one application to manage their school needs.
 We also want to help students plan ahead by showing progress toward graduation and useful recommendations.
+In this snapshot, the system is expanded further to support stronger communication, better resource management, and more useful academic tools for both students and administrators.
 
 \section{System Architecture}
 The system follows a client-server architecture.
@@ -35,7 +38,7 @@ Database: MongoDB
 
 Authentication: JWT-based login system
 
-New Feature Modules:
+Existing Feature Modules:
 
 Recommendation Engine for personalized internships, scholarships, and opportunities
 
@@ -43,7 +46,16 @@ Notification System for reminders, deadlines, and campus announcements
 
 Advisor Messaging Module for communication between students and advisors
 
-The frontend handles the user interface, while the backend manages requests, user data, recommendations, notifications, and communication with the database.
+New Snapshot 3 Feature Modules:
+
+Analytics Dashboard for tracking student progress, engagement, and opportunity activity
+
+Document Upload Module for resumes, academic files, and supporting materials
+
+Admin Management Module for updating opportunities, announcements, and student resources
+
+The frontend handles the user interface, while the backend manages requests, user data, recommendations, notifications, messaging, uploaded files, and communication with the database.
+The database stores student profiles, academic progress information, uploaded documents, recommendations, messages, and system announcements.
 
 \section{User Interface}
 The system includes several main pages:
@@ -64,12 +76,20 @@ Notifications Page for reminders, deadlines, and updates
 
 Recommendation Page for personalized student opportunities
 
-The interface is designed to be simple and easy to navigate for students.
+Analytics Dashboard Page for viewing student activity and progress summaries
 
-\section{Snapshot 2 Goals}
-For the second project snapshot, our goals are to expand the system by adding more advanced features and improving the design of the application.
-These new features include personalized recommendations, notifications, and advisor messaging.
-This snapshot also focuses on refining the system architecture, improving the user experience, and continuing the development documentation for the project.
+Document Upload Page for resumes and academic file submissions
+
+Admin Management Page for maintaining announcements, resources, and opportunity postings
+
+The interface is designed to be simple and easy to navigate for students, advisors, and administrators.
+The expanded interface in Snapshot 3 supports more advanced academic planning and management features while keeping the layout organized and user friendly.
+
+\section{Snapshot 3 Goals}
+For the third project snapshot, our goals are to continue expanding the system with another major set of features.
+This snapshot focuses on adding analytics tools, document upload support, and administrative management functions.
+These additions improve how students track their activity, how advisors review student information, and how administrators manage the overall system.
+This phase also updates the design documentation to reflect the growing complexity of the application and prepares the project for final refinement in the next snapshot.
 
 \section{Glossary}
 SDD = Software Design Document
@@ -79,5 +99,7 @@ UI = User Interface
 JWT = JSON Web Token
 
 API = Application Programming Interface
+
+DB = Database
 
 \end{document}
