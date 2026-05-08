@@ -1,0 +1,60 @@
+\documentclass{article}
+
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\geometry{a4paper, margin=1in}
+
+\begin{document}
+
+\title{Design Spec}
+\author{Your Name}
+\date{May 2026}
+
+\maketitle
+
+\fancyhf{}
+\fancyhead[C]{Design Spec}
+\fancyfoot[C]{\thepage}
+
+The Golden Eagle Flight Plan application combines multiple systems to provide students and faculty with a centralized platform for academic and professional development. This document explains how each part of the system functions.
+
+\section{Main Control System}
+The \textit{Main Control System} manages the overall application flow. It handles communication between the frontend and backend, processes user requests, and ensures the correct data is displayed on the screen.
+
+\section{Database}
+The \textit{database} stores all application data, including user accounts, resources, events, and progress tracking. It responds to requests from the backend and returns the necessary data for processing and display.
+
+\section{Frontend Interface}
+The \textit{frontend} is built using React Native with Expo. It provides users with an interactive interface including screens such as Home, Scoreboard, Resources, AI, and Settings. It sends user actions to the backend and displays returned data.
+
+\section{Login Page}
+The \textit{Login Page} allows users to enter their credentials. The frontend sends this information to the backend, which verifies it through the database. If correct, the user is granted access; otherwise, an error message is returned.
+
+\section{Sign-In and Sign-Up Pages}
+The \textit{Sign-Up Page} allows new users to create accounts by entering their information. The backend checks if the user already exists in the database. If not, the account is created and stored. The \textit{Sign-In Page} allows existing users to log in.
+
+\section{Dashboard}
+The \textit{Dashboard} acts as the main hub of the application. It displays personalized content such as resources, events, and user progress. It retrieves data from the backend based on the user’s profile.
+
+\section{Scoreboard System}
+The \textit{Scoreboard System} tracks user progress across Academic, Career, and Leadership categories. It records completed tasks and calculates levels and achievements. Data is stored and updated through the backend.
+
+\section{Resources and Events}
+The \textit{Resources and Events System} provides users with relevant opportunities. Content is stored in the database and filtered based on user preferences such as major and interests.
+
+\section{Faculty Dashboard}
+The \textit{Faculty Dashboard} allows faculty members to post resources and events. It also provides tools to monitor student progress and engagement within the system.
+
+\section{AI Features}
+The \textit{AI System} is designed to provide additional support tools such as an academic advisor chatbot and resume feedback. It interacts with user data to generate personalized recommendations.
+
+\section{Settings Page}
+The \textit{Settings Page} allows users to update their profile information, preferences, and account details. Changes are sent to the backend and stored in the database.
+
+\section{Conclusion}
+The Golden Eagle Flight Plan integrates multiple components to create a seamless experience for users. By connecting the frontend, backend, and database systems, the application provides a centralized and efficient platform for student success.
+
+\end{document}
