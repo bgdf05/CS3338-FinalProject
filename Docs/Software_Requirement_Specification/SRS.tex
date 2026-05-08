@@ -1,0 +1,409 @@
+\documentclass{scrreprt}
+\usepackage{listings}
+\usepackage{underscore}
+\usepackage{graphicx}
+\usepackage[bookmarks=true]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{indentfirst}
+\usepackage{fancyhdr}
+
+\geometry{a4paper, margin=1in}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{Software Requirements Specification}
+\fancyfoot[C]{\thepage}
+
+\hypersetup{
+    bookmarks=false,
+    pdftitle={Software Requirements Specification},
+    pdfauthor={CS3338 Final Project Group},
+    pdfsubject={Software Requirements Specification},
+    pdfkeywords={SRS, Golden Eagle Flight Plan, University Information System, Requirements},
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=black,
+    filecolor=black,
+    urlcolor=purple,
+    linktoc=page
+}
+
+\def\myversion{1.0}
+\date{}
+
+\begin{document}
+
+\begin{flushright}
+    \rule{16cm}{5pt}\vskip1cm
+    \begin{bfseries}
+        \Huge{SOFTWARE REQUIREMENTS\\ SPECIFICATION}\\
+        \vspace{1.5cm}
+        for\\
+        \vspace{1.5cm}
+        GOLDEN EAGLE FLIGHT PLAN\\
+        \vspace{1.5cm}
+        \LARGE{Version \myversion}\\
+        \vspace{1.5cm}
+        Prepared by: CS3338 Final Project Group\\
+
+        \vspace{1.5cm}
+        \today\\
+    \end{bfseries}
+\end{flushright}
+
+\tableofcontents
+
+\chapter{Introduction}
+
+\section{Purpose}
+The purpose of this Software Requirements Specification (SRS) is to define the requirements for the Golden Eagle Flight Plan application. The Golden Eagle Flight Plan is an AI-powered university information system designed to help students manage their academic, career, and leadership development in one centralized platform.
+
+The system will help students organize university resources, track personal progress, view relevant events, and receive personalized recommendations. It will also allow faculty members to post resources and events while monitoring student engagement and progress.
+
+This document describes the system's intended users, product scope, system features, functional requirements, interface requirements, nonfunctional requirements, and future enhancements.
+
+\section{Intended Audience and Reading Suggestions}
+This SRS is intended for students, faculty members, developers, testers, project managers, and course staff.
+
+Developers should focus on the system features, functional requirements, interface requirements, and database requirements. Testers should focus on the functional requirements, security requirements, performance requirements, and software quality attributes. Faculty members and course staff should focus on the project scope, user classes, scoreboard system, resources and events feed, and faculty dashboard requirements.
+
+\section{Project Scope}
+The Golden Eagle Flight Plan is a mobile application that centralizes student academic and professional development. The application will be built using React Native with Expo for the frontend, Node.js with Express for the backend, and MongoDB Atlas for cloud database storage.
+
+The project will be developed in stages. The start objective focuses on building the foundation of the application, including the frontend structure, backend structure, database connectivity, user authentication, and a basic dashboard. Later checkpoints focus on implementing the user system, scoreboard system, resources and events feed, faculty dashboard, personalization engine, progress tracking, JWT security, performance optimization, scalability, and AI features.
+
+The main goal is to help students stay organized and motivated by giving them a personalized platform for tracking progress and finding useful academic, career, and leadership opportunities.
+
+\chapter{Overall Description}
+
+\section{Product Perspective}
+The Golden Eagle Flight Plan is a full-stack mobile application. It uses a frontend and backend architecture where the frontend handles the user interface and the backend handles application logic, database operations, authentication, and API requests.
+
+The frontend will be built with React Native using Expo. It will include a navigation system with tabs such as Home, Scoreboard, Resources, AI, and Settings. These tabs allow users to quickly access the main parts of the application.
+
+The backend will be built with Node.js and Express. It will handle API requests, user authentication, user roles, resources, events, progress tracking, and future AI-related requests. MongoDB Atlas will be used as the cloud database for storing users, resources, events, and progress data.
+
+\section{User Classes and Characteristics}
+The system has the following main user classes:
+
+\begin{itemize}
+    \item \textbf{Student}
+    \begin{itemize}
+        \item Registers and logs into the application.
+        \item Manages their personal profile.
+        \item Views a personalized dashboard.
+        \item Tracks progress through the scoreboard system.
+        \item Views recommended resources and events.
+        \item Uses future AI tools such as an academic advisor chatbot and resume feedback system.
+    \end{itemize}
+
+    \item \textbf{Faculty Member}
+    \begin{itemize}
+        \item Registers or logs into the application with faculty access.
+        \item Posts resources and events for students.
+        \item Monitors student engagement.
+        \item Reviews student progress through the faculty dashboard.
+    \end{itemize}
+
+    \item \textbf{Administrator}
+    \begin{itemize}
+        \item Manages user access and system-level data.
+        \item Maintains application settings.
+        \item Helps manage database content and user roles.
+    \end{itemize}
+\end{itemize}
+
+\section{Product Functions}
+The main functions of the Golden Eagle Flight Plan include:
+
+\begin{enumerate}
+    \item \textbf{User Authentication}\\
+    The system allows users to register and log in securely.
+
+    \item \textbf{Role-Based Access}\\
+    The system separates student and faculty access so each user type has appropriate permissions.
+
+    \item \textbf{Dashboard Navigation}\\
+    The system provides a tabbed interface with Home, Scoreboard, Resources, AI, and Settings.
+
+    \item \textbf{Student Profile Management}\\
+    Students can manage profile information such as interests, major, and academic level.
+
+    \item \textbf{Scoreboard System}\\
+    Students can track achievements in Academic, Career, and Leadership categories.
+
+    \item \textbf{Resources and Events Feed}\\
+    Students can view resources and events related to their profile information.
+
+    \item \textbf{Faculty Dashboard}\\
+    Faculty members can post resources and events and monitor student engagement.
+
+    \item \textbf{Personalization Engine}\\
+    The system matches resources and events to users using hashtags based on profile information.
+
+    \item \textbf{Progress Tracking}\\
+    The system tracks completed tasks and calculates student levels and achievements.
+
+    \item \textbf{AI Features}\\
+    Future versions will include an academic advisor chatbot and resume feedback system.
+\end{enumerate}
+
+\section{Operating Environment}
+The system will operate in the following environment:
+
+\begin{itemize}
+    \item Frontend framework: React Native with Expo.
+    \item Backend framework: Node.js with Express.
+    \item Database: MongoDB Atlas.
+    \item Authentication: JWT authentication.
+    \item Client devices: mobile devices, tablets, laptops, and desktop computers.
+    \item Supported platforms: iOS, Android, and modern web browsers depending on deployment.
+\end{itemize}
+
+\section{Design and Implementation Constraints}
+The system shall use React Native with Expo for the mobile frontend. The user interface shall use reusable components and a tabbed navigation system.
+
+The backend shall use Node.js with Express to handle API requests and application logic. MongoDB Atlas shall be used to store application data. The system shall use JWT authentication for secure user session validation.
+
+The project team will be divided into frontend and backend groups. The frontend group will focus on the user interface and navigation, while the backend group will focus on data management, API development, authentication, and database connectivity.
+
+\section{Assumptions and Dependencies}
+The system assumes that users will have internet access. The system also assumes that students will provide accurate profile information so that personalization can work correctly.
+
+The application depends on Expo, Node.js, Express, MongoDB Atlas, and JWT authentication. If MongoDB Atlas or the backend server is unavailable, users may not be able to log in, update progress, or view current resources and events.
+
+\chapter{System Features}
+
+\section{Description and Priority}
+The system features are prioritized according to the project checkpoints.
+
+\subsection{Start Objective Features}
+\begin{enumerate}
+    \item Establish frontend application structure using React Native with Expo.
+    \item Establish backend application structure using Node.js with Express.
+    \item Connect the backend to MongoDB Atlas.
+    \item Create login and registration screens.
+    \item Create a basic dashboard layout.
+    \item Create a tabbed navigation system with Home, Scoreboard, Resources, AI, and Settings.
+\end{enumerate}
+
+\subsection{Checkpoint 1 Features}
+\begin{enumerate}
+    \item Implement user registration and login.
+    \item Implement student and faculty roles.
+    \item Allow users to manage profiles.
+    \item Implement the scoreboard system.
+    \item Implement resources and events feed.
+    \item Implement the faculty dashboard.
+\end{enumerate}
+
+\subsection{Checkpoint 2 Features}
+\begin{enumerate}
+    \item Implement personalization using hashtags.
+    \item Match resources and events to student profile information.
+    \item Track completed tasks.
+    \item Calculate levels and achievements.
+    \item Implement JWT authentication.
+    \item Improve user interface and navigation.
+\end{enumerate}
+
+\subsection{Final Checkpoint Features}
+\begin{enumerate}
+    \item Optimize application performance.
+    \item Improve scalability.
+    \item Begin integrating AI features.
+    \item Add or prepare the academic advisor chatbot.
+    \item Add or prepare the resume feedback system.
+    \item Improve accessibility and usability for students and faculty.
+\end{enumerate}
+
+\section{Functional Requirements}
+
+\subsection{Authentication Requirements}
+\begin{enumerate}
+    \item The system shall allow users to register an account.
+    \item The system shall allow users to log into an existing account.
+    \item The system shall validate login credentials.
+    \item The system shall assign users a role of student, faculty, or administrator.
+    \item The system shall use JWT authentication for user session validation.
+    \item The system shall prevent unauthenticated users from accessing protected features.
+    \item The system shall allow users to log out.
+\end{enumerate}
+
+\subsection{Navigation Requirements}
+\begin{enumerate}
+    \item The system shall provide a tabbed navigation interface.
+    \item The navigation system shall include Home, Scoreboard, Resources, AI, and Settings.
+    \item The system shall allow users to switch between tabs.
+    \item The system shall show user-specific content based on role.
+\end{enumerate}
+
+\subsection{Profile Requirements}
+\begin{enumerate}
+    \item The system shall allow students to create a profile.
+    \item The system shall allow users to update profile information.
+    \item The student profile shall include academic level.
+    \item The student profile shall include major.
+    \item The student profile shall include interests.
+    \item The system shall use profile information for personalization.
+\end{enumerate}
+
+\subsection{Scoreboard Requirements}
+\begin{enumerate}
+    \item The system shall provide a scoreboard for students.
+    \item The scoreboard shall track Academic category progress.
+    \item The scoreboard shall track Career category progress.
+    \item The scoreboard shall track Leadership category progress.
+    \item The system shall allow students to view completed and incomplete tasks.
+    \item The system shall store task completion information.
+    \item The system shall calculate levels and achievements based on completed tasks.
+\end{enumerate}
+
+\subsection{Resources and Events Feed Requirements}
+\begin{enumerate}
+    \item The system shall display resources to students.
+    \item The system shall display events to students.
+    \item The system shall recommend resources based on user interests.
+    \item The system shall recommend resources based on major.
+    \item The system shall recommend resources based on academic level.
+    \item The system shall recommend events based on user interests.
+    \item The system shall recommend events based on major.
+    \item The system shall recommend events based on academic level.
+\end{enumerate}
+
+\subsection{Faculty Dashboard Requirements}
+\begin{enumerate}
+    \item The system shall provide a dashboard for faculty members.
+    \item The system shall allow faculty members to post resources.
+    \item The system shall allow faculty members to post events.
+    \item The system shall allow faculty members to monitor student engagement.
+    \item The system shall allow faculty members to view student progress.
+\end{enumerate}
+
+\subsection{Personalization Engine Requirements}
+\begin{enumerate}
+    \item The system shall use hashtags to classify resources and events.
+    \item The system shall compare hashtags with student profile information.
+    \item The system shall recommend matching resources to students.
+    \item The system shall recommend matching events to students.
+    \item The system shall update recommendations when profile information changes.
+\end{enumerate}
+
+\subsection{AI Feature Requirements}
+\begin{enumerate}
+    \item The system should include an AI section in the navigation system.
+    \item The system should support future integration of an academic advisor chatbot.
+    \item The system should support future integration of a resume feedback system.
+    \item The system should allow AI features to use student profile and progress data only when authorized.
+\end{enumerate}
+
+\chapter{External Interface Requirements}
+
+\section{User Interfaces}
+The system shall provide a mobile-friendly interface. The user interface shall include screens for registration, login, dashboard, scoreboard, resources, AI tools, settings, profile management, and faculty dashboard.
+
+The dashboard should be easy to navigate and should clearly display important information. The scoreboard should show student progress in Academic, Career, and Leadership categories. The resources and events feed should show personalized opportunities based on the student profile.
+
+\section{Hardware Interfaces}
+The system does not require special hardware. Users may access the application using smartphones, tablets, laptops, or desktop computers.
+
+\section{Software Interfaces}
+The frontend shall communicate with the backend using API requests. The backend shall communicate with MongoDB Atlas for data storage and retrieval. JWT authentication shall be used to secure communication and validate sessions.
+
+\section{Communication Interfaces}
+The system shall communicate over standard network protocols. When deployed, the system should use HTTPS to protect user information and authentication tokens.
+
+\chapter{Other Nonfunctional Requirements}
+
+\section{Performance Requirements}
+\begin{itemize}
+    \item The application should load main screens within a reasonable time.
+    \item The dashboard should display updated information quickly.
+    \item The resources and events feed should retrieve personalized results efficiently.
+    \item Scoreboard updates should be saved and displayed without unnecessary delay.
+    \item The system should remain responsive as more users and data are added.
+\end{itemize}
+
+\section{Security Requirements}
+\begin{itemize}
+    \item The system shall use JWT authentication.
+    \item The system shall protect user sessions.
+    \item The system shall restrict access based on user role.
+    \item Students shall not be able to access faculty-only features.
+    \item Faculty members shall not be able to modify system settings unless given administrator access.
+    \item Passwords shall be stored securely.
+    \item The system should use HTTPS when deployed.
+\end{itemize}
+
+\section{Software Quality Attributes}
+\begin{itemize}
+    \item \textbf{Usability:} The system should be easy for students and faculty to understand and navigate.
+    \item \textbf{Accessibility:} The system should be designed to support users with different accessibility needs.
+    \item \textbf{Reliability:} The system should accurately store user data, profile information, resources, events, and progress.
+    \item \textbf{Maintainability:} The codebase should be organized so future features can be added easily.
+    \item \textbf{Scalability:} The system should support more users, resources, events, and progress records over time.
+    \item \textbf{Performance:} The system should be optimized for fast loading and smooth navigation.
+\end{itemize}
+
+\section{Business Rules}
+\begin{itemize}
+    \item Each user must have a role.
+    \item Students may only update their own profile and progress information.
+    \item Faculty members may post resources and events.
+    \item Faculty members may monitor student engagement.
+    \item Resources and events should be categorized with hashtags.
+    \item Personalized recommendations should be based on user interests, major, and academic level.
+    \item Scoreboard achievements should be based on completed tasks.
+    \item AI features should not access private student information unless authorized.
+\end{itemize}
+
+\chapter{Database Requirements}
+
+\section{Main Data Entities}
+The MongoDB Atlas database shall store data for the following entities:
+
+\begin{itemize}
+    \item \textbf{Users:} Stores account information, login credentials, role, and profile data.
+    \item \textbf{Profiles:} Stores student academic level, major, interests, and related personalization data.
+    \item \textbf{Resources:} Stores resource title, description, category, hashtags, and creator information.
+    \item \textbf{Events:} Stores event title, description, date, category, hashtags, and creator information.
+    \item \textbf{Scoreboard Tasks:} Stores Academic, Career, and Leadership tasks.
+    \item \textbf{Progress Records:} Stores completed tasks, levels, and achievements.
+\end{itemize}
+
+\section{Suggested Collections}
+The database may include the following collections:
+
+\begin{itemize}
+    \item users
+    \item profiles
+    \item resources
+    \item events
+    \item scoreboard\_tasks
+    \item progress\_records
+\end{itemize}
+
+\chapter{Other Requirements}
+
+\section{Future Enhancements}
+Future versions of the Golden Eagle Flight Plan may include a fully integrated academic advisor chatbot, resume feedback system, stronger recommendation algorithms, notifications, advisor notes, progress reports, and additional university system integrations.
+
+\section{Maintenance Requirements}
+The system will require regular maintenance to fix bugs, update dependencies, improve security, optimize performance, and add new resources, events, and AI capabilities.
+
+\section{Appendix A: Glossary}
+\begin{itemize}
+    \item \textbf{Golden Eagle Flight Plan:} The university information system described in this SRS.
+    \item \textbf{Scoreboard:} A progress tracking feature for academic, career, and leadership achievements.
+    \item \textbf{Resource:} A useful academic, career, or leadership support item posted in the system.
+    \item \textbf{Event:} A university activity or opportunity shown to users.
+    \item \textbf{Faculty Dashboard:} A faculty-facing interface for posting resources and events and monitoring student engagement.
+    \item \textbf{JWT:} JSON Web Token, used to validate secure user sessions.
+    \item \textbf{Personalization Engine:} The part of the system that matches resources and events to users based on profile hashtags.
+\end{itemize}
+
+\section{Appendix B: References}
+
+
+\end{document}
