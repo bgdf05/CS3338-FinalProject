@@ -10,75 +10,102 @@
 \maketitle
 
 \section{Revision History}
-Version 0.1 - Snapshot 1 Initial Draft \\
 
-Version 0.2 - Snapshot 2 Added new feature modules, updated system architecture, and expanded user interface design. \\
-
-Version 0.3 - Snapshot 3 Added analytics dashboard, document upload support, admin management tools, and updated architecture for expanded system services.
+\begin{center}
+\begin{tabular}{|c|p{4in}|}
+\hline
+Version & Description \\
+\hline
+0.1 & Snapshot 1 Initial Draft \\
+\hline
+0.2 & Snapshot 2 Added recommendation engine, notification system, advisor messaging module, and expanded user interface \\
+\hline
+0.3 & Snapshot 3 Added analytics dashboard, document upload support, admin management tools, and updated architecture \\
+\hline
+1.0 & Snapshot 4 Finalized system design document, polished architecture, refined interface descriptions, and added future work plans \\
+\hline
+\end{tabular}
+\end{center}
 
 \section{Introduction}
-This document explains the design of our AI-Powered University Information System.
-The goal of this project is to create one platform where students can easily check their academic progress, explore campus opportunities, and communicate with advisors.
-Many students currently use different websites for these tasks, so our system is meant to make the process simpler.
+
+This document explains the final software design of our AI-Powered University Information System.
+The purpose of this project is to create one centralized platform where university students can manage academic progress, explore campus opportunities, receive personalized recommendations, and communicate with advisors.
+Many students currently rely on multiple disconnected systems, so this application is designed to simplify access to important university services.
 
 \section{Purpose}
-The purpose of this project is to improve how students access important university information.
-Instead of searching through multiple systems, students can use one application to manage their school needs.
-We also want to help students plan ahead by showing progress toward graduation and useful recommendations.
-In this snapshot, the system is expanded further to support stronger communication, better resource management, and more useful academic tools for both students and administrators.
+
+The purpose of this project is to improve how students access and manage university information.
+Instead of searching through several different websites, students can use one application for academic planning, opportunity discovery, communication, and progress tracking.
+The final system design focuses on efficiency, accessibility, scalability, and a better overall student experience.
 
 \section{System Architecture}
+
 The system follows a client-server architecture.
 
-\textbf{Frontend:} React Native and Web Interface \\  
-\textbf{Backend:} Node.js with Express \\  
-\textbf{Database:} MongoDB \\  
-\textbf{Authentication:} JWT-based login system
+\subsection{Technology Stack}
 
-\subsection*{Existing Feature Modules}
 \begin{itemize}
-\item Recommendation Engine for personalized internships, scholarships, and opportunities
-\item Notification System for reminders, deadlines, and campus announcements
+\item Frontend: React Native and Web Interface
+\item Backend: Node.js with Express
+\item Database: MongoDB
+\item Authentication: JWT-based login system
+\end{itemize}
+
+\subsection{Core Modules}
+
+\begin{itemize}
+\item Recommendation Engine for personalized internships, scholarships, and campus opportunities
+\item Notification System for reminders, deadlines, announcements, and updates
 \item Advisor Messaging Module for communication between students and advisors
-\end{itemize}
-
-\subsection*{New Snapshot 3 Feature Modules}
-\begin{itemize}
-\item Analytics Dashboard for tracking student progress, engagement, and opportunity activity
+\item Analytics Dashboard for progress summaries and student engagement data
 \item Document Upload Module for resumes, academic files, and supporting materials
-\item Admin Management Module for updating opportunities, announcements, and student resources
+\item Admin Management Module for maintaining resources, announcements, and postings
 \end{itemize}
 
-The frontend handles the user interface, while the backend manages requests, user data, recommendations, notifications, messaging, uploaded files, and communication with the database.
-The database stores student profiles, academic progress information, uploaded documents, recommendations, messages, and system announcements.
+The frontend provides a responsive, accessible, and user-friendly interface across mobile and web platforms.
+The backend processes requests, handles authentication, manages communication between modules, and controls business logic.
+The database stores user accounts, academic progress data, recommendations, messages, uploaded files, and announcements.
 
 \section{User Interface}
+
 The system includes several main pages:
 
 \begin{itemize}
-\item Login Page for secure sign in
+\item Login Page for secure sign-in
 \item Dashboard for announcements and quick access tools
-\item Progress Tracker for completed units and degree progress
-\item Resources Page for internships, scholarships, and events
+\item Progress Tracker for completed units and graduation progress
+\item Resources Page for internships, scholarships, and campus events
 \item Advisor Portal for advisor and student communication
 \item Profile Page for account settings and personal information
-\item Notifications Page for reminders, deadlines, and updates
-\item Recommendation Page for personalized student opportunities
-\item Analytics Dashboard Page for viewing student activity and progress summaries
-\item Document Upload Page for resumes and academic file submissions
-\item Admin Management Page for maintaining announcements, resources, and opportunity postings
+\item Notifications Page for reminders and important updates
+\item Recommendation Page for personalized opportunities
+\item Analytics Dashboard Page for summaries and activity insights
+\item Document Upload Page for resumes and academic files
+\item Admin Management Page for system maintenance and content updates
 \end{itemize}
 
-The interface is designed to be simple and easy to navigate for students, advisors, and administrators.
-The expanded interface in Snapshot 3 supports more advanced academic planning and management features while keeping the layout organized and user friendly.
+The interface is designed to be simple, organized, and easy to navigate for students, advisors, and administrators across mobile and web platforms.
 
-\section{Snapshot 3 Goals}
-For the third project snapshot, our goals are to continue expanding the system with another major set of features.
-This snapshot focuses on adding analytics tools, document upload support, and administrative management functions.
-These additions improve how students track their activity, how advisors review student information, and how administrators manage the overall system.
-This phase also updates the design documentation to reflect the growing complexity of the application and prepares the project for final refinement in the next snapshot.
+\section{Final Snapshot Goals}
+
+For the fourth and final project snapshot, our goals are to finalize all documentation, polish the software design, confirm the integration of all planned features, and prepare the project for final submission.
+This phase focuses on ensuring consistency across all modules and presenting a complete system design.
+
+\section{Future Work}
+
+Possible future improvements for the system include:
+
+\begin{itemize}
+\item AI chatbot support for answering student questions
+\item Calendar synchronization with academic deadlines and events
+\item Advanced career planning tools
+\item Expanded mobile notifications
+\item Integration with official university databases and learning systems
+\end{itemize}
 
 \section{Glossary}
+
 \begin{itemize}
 \item SDD = Software Design Document
 \item UI = User Interface
@@ -86,5 +113,11 @@ This phase also updates the design documentation to reflect the growing complexi
 \item API = Application Programming Interface
 \item DB = Database
 \end{itemize}
+
+\section{Conclusion}
+
+The AI-Powered University Information System is designed to centralize student services into a single scalable platform.
+The final software design emphasizes usability, modularity, security, and future expansion.
+This project provides a foundation for improving student access to academic resources, communication tools, and personalized recommendations.
 
 \end{document}
